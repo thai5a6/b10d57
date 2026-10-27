@@ -1,0 +1,19 @@
+<section id="@Id" class="section-card">
+    <div class="section-left">
+        <h2>@Title</h2>
+        @if (!string.IsNullOrEmpty(Description))
+        {
+            <p>@Description</p>
+        }
+    </div>
+    <div class="section-right">
+        @ChildContent
+    </div>
+</section>
+
+@code {
+    [Parameter, EditorRequired] public string Id { get; set; } = "";
+    [Parameter, EditorRequired] public string Title { get; set; } = "";
+    [Parameter] public string? Description { get; set; }
+    [Parameter] public RenderFragment? ChildContent { get; set; }
+}

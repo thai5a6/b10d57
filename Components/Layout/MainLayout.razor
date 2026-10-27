@@ -1,0 +1,54 @@
+@inherits LayoutComponentBase
+@inject AccountService Svc
+
+<RadzenDialog />
+<RadzenNotification />
+<RadzenTooltip />
+
+<header class="site-header">
+    <div class="brand-row">
+        <img src="logo.svg" alt="Logo Học viện" class="brand-logo" />
+        <div class="brand-text">
+            <div class="brand-vn">HỌC VIỆN AN NINH NHÂN DÂN</div>
+            <div class="brand-en">HỆ THỐNG QUẢN LÝ THU HỒI TÀI SẢN NỘI BỘ</div>
+        </div>
+    </div>
+
+    <div class="tool-row">
+        <div class="tool-inner">
+            <div class="user-info">
+                <RadzenIcon Icon="account_circle" />
+                <span>@Svc.Current.DisplayName <small>(@Svc.Current.Username)</small></span>
+            </div>
+            <div class="lang">Tiếng Việt <RadzenIcon Icon="expand_more" /></div>
+            <button class="round-btn" aria-label="Tìm kiếm"><RadzenIcon Icon="search" /></button>
+        </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Điều hướng chính">
+        <div class="nav-inner">
+            <a href="/" class="nav-home" aria-label="Trang chủ"><RadzenIcon Icon="home" /></a>
+            <a href="/">TÀI KHOẢN</a>
+            <span class="sep"></span>
+            <a href="#">TÀI SẢN</a>
+            <span class="sep"></span>
+            <a href="#">ĐỢT THU HỒI</a>
+            <span class="sep"></span>
+            <a href="#">BÀN GIAO</a>
+            <span class="sep"></span>
+            <a href="#">BÁO CÁO</a>
+            <span class="sep"></span>
+            <a href="#">HỖ TRỢ</a>
+        </div>
+    </nav>
+
+    <div class="ticker">
+        <span class="ticker-label">TIN MỚI</span>
+        <RadzenIcon Icon="star" class="ticker-star" />
+        <span class="ticker-text">Hệ thống đang vận hành thử nghiệm. Hãy bật xác thực nhiều lớp để bảo vệ dữ liệu tài sản của đơn vị.</span>
+    </div>
+</header>
+
+<main class="page-body">
+    @Body
+</main>
